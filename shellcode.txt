@@ -1,0 +1,22 @@
+mov eax, 5
+mov ebx, 0x804c030
+add ebx, 30				      (skips text at beginning and goes to start of file name)
+mov ecx, 0
+mov edx, 0
+int	0x80
+
+mov	ebx, eax
+mov	eax, 3
+mov	ecx, 0x804c030
+mov edx, 30
+int 0x80
+
+mov	eax, 4
+mov	ebx, 1
+mov ecx, 0x804c030
+mov	edx, 30
+int 0x80
+
+mov eax, 1
+mov ebx, 0						(exits with no errors)
+int 0x80
